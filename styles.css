@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/background_img.jpg');
+    background-blend-mode: soft-light;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(17, 17, 17, 0.755); /* Add a faded effect using RGBA color */
+    color: #fff;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+  
+  .chat-container {
+    width: 33%;
+    height: 90vh;
+    margin: 5vh auto;
+    background-color: #222;
+    border-radius: 8px;
+    padding: 16px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    overflow: auto; /* Add this line to remove horizontal scrollbar */
+    border: 1px solid #fcf9f993; /* Add a border */
+    box-shadow: 0 0 10px rgba(246, 245, 245, 0.5); /* Add a box shadow */
+  }
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+    position:relative; /* Position the logo container */
+    top: 0; /* Position it at the top */
+    left: 50%; /* Move it to the center horizontally */
+    transform: translateX(-50%); /* Adjust horizontal alignment */
+  }
+  
+  .logo-container img {
+    width: inherit;
+    height: 100px;
+  }
+  
+  .chat-screen {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .message {
+    position: relative;
+    padding: 8px;
+    border-radius: 8px;
+    animation: fadeIn 0.5s ease-in-out; /* Add fade-in animation */
+    max-width: 80%; /* Limit the width of the message content */
+    word-wrap: break-word; /* Wrap long words if necessary */
+  }
+  
+  .user-message {
+    background-color: #059d02;
+    align-self: flex-end;
+    color: #fff;
+    right: 40px;
+  }
+  
+  .computer-message {
+    background-color: #cc8f0b;
+    align-self: flex-start;
+    color: #fff;
+    left: 40px;
+  }
+  
+  .user-message::before,
+  .computer-message::before {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+  
+  .user-message::before {
+    background-image: url('user-2.png'); /* Replace with the path to the person icon image */
+    background-size: cover;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .computer-message::before {
+    background-image: url('chef.jpg'); /* Replace with the path to the chef image */
+    background-size: cover;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .message-input {
+    flex-grow: 1;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    margin-right: 8px;
+    margin-top: 20px;
+  }
+  
+  .send-button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: #059d02;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  /* Dark theme */
+  body.dark-theme {
+    background-color: #222;
+    color: #fff;
+  }
+  
+  .chat-container.dark-theme {
+    background-color: #111;
+  }
+  
+  .message.dark-theme {
+    background-color: #333;
+  }
+  
+  .user-message.dark-theme {
+    background-color: #0099ff;
+  }
+  
+  .computer-message.dark-theme {
+    background-color: #00cc99;
+  }
+  
+  .input-container.dark-theme {
+    background-color: #333;
+  }
+  
+  .send-button.dark-theme {
+    background-color: #0099ff;
+  }
+
+  /* Scrollbar Styles */
+.chat-container::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  .chat-container::-webkit-scrollbar-track {
+    background: #2c2c2c; /* Background color of the scrollbar track */
+  }
+  
+  .chat-container::-webkit-scrollbar-thumb {
+    background-color: #f2b312; /* Color of the scrollbar thumb */
+    border-radius: 4px; /* Rounded corners of the scrollbar thumb */
+  }
+  
+  .chat-container::-webkit-scrollbar-thumb:hover {
+    background-color: #3c3c3c; /* Color of the scrollbar thumb on hover */
+  }
+  
